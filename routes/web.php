@@ -23,6 +23,8 @@ Route::get('/product/{product_id}', 'ProductController@index')->name('product');
 Route::get('/about', 'AboutController@index')->name('about');
 
 Route::get('/news', 'NewsController@index')->name('news');
+
+
 Route::get('/news/article/{news_id}', 'NewsController@article')->name('news.article');
 
 Route::group(['prefix' => 'cart', 'middleware' => 'registered'], function () {
@@ -39,6 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminOnly'], function () {
     Route::get('/', function () {
         return redirect()->route('admin.settings');
     })->name('admin');
+    Route::get('/task', 'Admin\TaskController@index')->name('admin.task');
     Route::get('/settings', 'Admin\SettingsController@index')->name('admin.settings');
     Route::post('/settings/send', 'Admin\SettingsController@send')->name('admin.settings.send');
     Route::get('/categories', 'Admin\CategoriesController@index')->name('admin.categories');
