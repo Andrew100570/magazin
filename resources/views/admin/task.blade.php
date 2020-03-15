@@ -8,9 +8,7 @@
                 <table style="width: 80%" border="1">
                     <tr >
                         @foreach($statuses as $status)
-                            <th >
-                {{ $status->name }}
-                </th>
+                            <th >{{ $status->name }}</th>
                         @endforeach
                     </tr>
                     <tr >
@@ -21,6 +19,8 @@
                                    <ul class="table-style">
                                        <li>{{ $taskOnes->title }}</li>
                                        <li>{{ $taskOnes->description }}</li>
+                                       <li><button type="submit" class="btn btn-primary">Редактировать</button></li>
+                                       <li>Кол-во комментариев:</li>
                                    </ul>
                                    </li>
                             @endforeach
@@ -32,7 +32,9 @@
                                     <li style="list-style-type: none;">
                                         <ul class="table-style">
                                             <li>{{ $taskTwos->title }}</li>
-                                            <li>{{  $taskOnes->description }}</li>
+                                            <li>{{ $taskTwos->description }}</li>
+                                            <li><button type="submit" class="btn btn-primary">Редактировать</button></li>
+                                            <li>Кол-во комментариев:</li>
                                         </ul>
                                     </li>
                             @endforeach
@@ -44,7 +46,9 @@
                                     <li style="list-style-type: none;">
                                         <ul class="table-style">
                                             <li>{{ $taskThrees->title }}</li>
-                                            <li>{{ $taskOnes->description }}</li>
+                                            <li>{{ $taskThrees->description }}</li>
+                                            <li><button type="submit" class="btn btn-primary">Редактировать</button></li>
+                                            <li>Кол-во комментариев:</li>
                                         </ul>
                                     </li>
                             @endforeach
