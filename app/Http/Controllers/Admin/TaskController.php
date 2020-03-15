@@ -13,7 +13,12 @@ class TaskController extends Controller
     public function index()
     {
         $statuses = Status::all();
-        return view('admin.task',compact('statuses'));
+
+        $taskOne = Task::where('id_status', '=', 1)->get();
+        $taskTwo = Task::where('id_status','=','2')->get();
+        $taskThree = Task::where('id_status','=','3')->get();
+        return view('admin.task',
+            compact(['statuses','taskOne','taskTwo','taskThree']));
     }
 
 }
