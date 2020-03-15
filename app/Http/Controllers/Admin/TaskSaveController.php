@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Database\DatabaseManager;
 use App\Task;
 use App\Status;
+use Carbon\Carbon;
 
 class TaskSaveController extends Controller
 {
@@ -41,9 +42,10 @@ class TaskSaveController extends Controller
 
                 $task->title = $name;
 
-                $status = Status::find($status_id);//2 строка
+                $status = Status::find($status_id);
                 $task->status()->associate($status);
                 $task->description = $description;
+                $task->created_at = Carbon::now();
 
                 $task->save();
 
