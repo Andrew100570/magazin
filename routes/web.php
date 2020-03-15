@@ -24,6 +24,13 @@ Route::get('/about', 'AboutController@index')->name('about');
 
 Route::get('/news', 'NewsController@index')->name('news');
 
+Route::get('/vk', 'VkController@index')->name('vk');
+
+Route::post('/info', 'InfoController@index')->name('info');
+
+Route::get('/my_form/{product_id}', 'MyFormController@show')->name('MyForm');
+
+Route::post('/my_form/save', 'SaveFormController@create')->name('mySave');
 
 Route::get('/news/article/{news_id}', 'NewsController@article')->name('news.article');
 
@@ -42,6 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminOnly'], function () {
         return redirect()->route('admin.settings');
     })->name('admin');
     Route::get('/task', 'Admin\TaskController@index')->name('admin.task');
+    Route::post('/save_task', 'Admin\TaskSaveController@create')->name('admin.saveTask');
     Route::get('/settings', 'Admin\SettingsController@index')->name('admin.settings');
     Route::post('/settings/send', 'Admin\SettingsController@send')->name('admin.settings.send');
     Route::get('/categories', 'Admin\CategoriesController@index')->name('admin.categories');
