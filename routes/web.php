@@ -49,6 +49,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminOnly'], function () {
         return redirect()->route('admin.settings');
     })->name('admin');
     Route::get('/task', 'Admin\TaskController@index')->name('admin.task');
+    Route::get('/editing/{id}', 'Admin\EditingController@show')->name('admin.editing');
+    Route::post('/change', 'Admin\ChangeController@edit')->name('admin.change');
     Route::post('/save_task', 'Admin\TaskSaveController@create')->name('admin.saveTask');
     Route::get('/settings', 'Admin\SettingsController@index')->name('admin.settings');
     Route::post('/settings/send', 'Admin\SettingsController@send')->name('admin.settings.send');

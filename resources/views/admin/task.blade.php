@@ -14,13 +14,14 @@
                     <tr >
                         <td >
                             <ul class="table-style-ul" >
-                            @foreach($taskOne as $taskOnes)
+                            @foreach($todo as $task)
                                <li style="list-style-type: none;">
                                    <ul class="table-style">
-                                       <li>{{ $taskOnes->title }}</li>
-                                       <li>{{ $taskOnes->description }}</li>
-                                       <li><a href="{{route('admin.editing',['id' => $taskOnes->id])}}">Редактировать</a></li>
-                                       <li>Кол-во комментариев:</li>
+                                       <li>{{ $task->title }}</li>
+                                       <li>{{ $task->description }}</li>
+                                       <li><a href="{{route('admin.editing',['id' => $task->id])}}">Редактировать</a></li>
+                                               <li>Кол-во комментариев:</li>
+                                               <span>{{ $commentCount[$task->id]->comments_count }}</span>
                                    </ul>
                                    </li>
                             @endforeach
@@ -28,13 +29,14 @@
                         </td>
                         <td>
                             <ul class="table-style-ul" >
-                            @foreach($taskTwo as $taskTwos)
+                            @foreach($doing as $task)
                                     <li style="list-style-type: none;">
                                         <ul class="table-style">
-                                            <li>{{ $taskTwos->title }}</li>
-                                            <li>{{ $taskTwos->description }}</li>
-                                            <li><a href="{{route('admin.editing',['id' => $taskTwos->id])}}">Редактировать</a></li>
+                                            <li>{{ $task->title }}</li>
+                                            <li>{{ $task->description }}</li>
+                                            <li><a href="{{route('admin.editing',['id' => $task->id])}}">Редактировать</a></li>
                                             <li>Кол-во комментариев:</li>
+                                            <span>{{ $commentCount[$task->id]->comments_count }}</span>
                                         </ul>
                                     </li>
                             @endforeach
@@ -42,13 +44,14 @@
                         </td>
                         <td>
                             <ul class="table-style-ul" >
-                            @foreach($taskThree as $taskThrees)
+                            @foreach($done as $task)
                                     <li style="list-style-type: none;">
                                         <ul class="table-style">
-                                            <li>{{ $taskThrees->title }}</li>
-                                            <li>{{ $taskThrees->description }}</li>
-                                            <li><a href="{{route('admin.editing',['id' => $taskThrees->id])}}">Редактировать</a></li>
+                                            <li>{{ $task->title }}</li>
+                                            <li>{{ $task->description }}</li>
+                                            <li><a href="{{route('admin.editing',['id' => $task->id])}}">Редактировать</a></li>
                                             <li>Кол-во комментариев:</li>
+                                            <span>{{ $commentCount[$task->id]->comments_count }}</span>
                                         </ul>
                                     </li>
                             @endforeach

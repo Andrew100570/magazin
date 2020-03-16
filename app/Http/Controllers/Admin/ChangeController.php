@@ -29,7 +29,7 @@ class ChangeController extends Controller
                 $task->status()->associate($status);
                 $task->title = $title;
                 $task->description = $description;
-                $task->created_at = Carbon::now();
+                //$task->created_at = Carbon::now();
 
                 $task->save();
 
