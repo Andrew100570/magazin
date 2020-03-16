@@ -19,7 +19,7 @@
                                    <ul class="table-style">
                                        <li>{{ $taskOnes->title }}</li>
                                        <li>{{ $taskOnes->description }}</li>
-                                       <li><button type="submit" class="btn btn-primary">Редактировать</button></li>
+                                       <li><a href="{{route('admin.editing',['id' => $taskOnes->id])}}">Редактировать</a></li>
                                        <li>Кол-во комментариев:</li>
                                    </ul>
                                    </li>
@@ -33,7 +33,7 @@
                                         <ul class="table-style">
                                             <li>{{ $taskTwos->title }}</li>
                                             <li>{{ $taskTwos->description }}</li>
-                                            <li><button type="submit" class="btn btn-primary">Редактировать</button></li>
+                                            <li><a href="{{route('admin.editing',['id' => $taskTwos->id])}}">Редактировать</a></li>
                                             <li>Кол-во комментариев:</li>
                                         </ul>
                                     </li>
@@ -47,7 +47,7 @@
                                         <ul class="table-style">
                                             <li>{{ $taskThrees->title }}</li>
                                             <li>{{ $taskThrees->description }}</li>
-                                            <li><button type="submit" class="btn btn-primary">Редактировать</button></li>
+                                            <li><a href="{{route('admin.editing',['id' => $taskThrees->id])}}">Редактировать</a></li>
                                             <li>Кол-во комментариев:</li>
                                         </ul>
                                     </li>
