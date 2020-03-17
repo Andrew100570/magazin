@@ -39,10 +39,8 @@
                 </div>
                 <div class="form-row">
                         @foreach($comments as $comment)
-                                @if($task->id == $comment->id_task)
                                         <label for="description">{{ $comment->id }}.</label>
                                         <span>{{ $comment->description }}</span>
-                                @endif
                         @endforeach
                 </div>
 

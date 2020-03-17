@@ -51,6 +51,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminOnly'], function () {
     Route::get('/task', 'Admin\TaskController@index')->name('admin.task');
     Route::get('/editing/{id}', 'Admin\EditingController@show')->name('admin.editing');
     Route::post('/change', 'Admin\ChangeController@edit')->name('admin.change');
+    Route::get('/api/tasks', 'Admin\TaskController@get')->name('admin.api');
     Route::post('/save_task', 'Admin\TaskSaveController@create')->name('admin.saveTask');
     Route::get('/settings', 'Admin\SettingsController@index')->name('admin.settings');
     Route::post('/settings/send', 'Admin\SettingsController@send')->name('admin.settings.send');

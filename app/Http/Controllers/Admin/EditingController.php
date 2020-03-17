@@ -15,7 +15,7 @@ class EditingController extends Controller
     {
         $task = Task::where('id', '=', $id)->first();
         $statuses = Status::all();
-        $comments = Comment::all();
+        $comments = Comment::where('id_task', '=', $id)->get();
 
         return view('admin.editing',['task' => $task,'statuses'=>$statuses,
             'comments'=>$comments]);
